@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    @apply text-7xl font-bebasNeue text-black tracking-tighter leading-[89.4px];
+}
+
+.button {
+    @apply px-6 py-3 font-robotoFlex font-semibold text-base rounded-lg transition-colors duration-300 ease-in-out;
+}
+
+.button-background {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.button-outline {
+    @apply border border-blue-600 text-blue-600 hover:bg-gray-100;
+}
+
+.button-active {
+    @apply text-blue-600 font-semibold;
+}
+
+.dot {
+    @apply w-2 h-2 rounded-full bg-gray-200 transition-colors duration-300 ease-in-out;
+}
+
+.dot-active {
+    @apply bg-blue-600;
+}
+
+@layer utilities {
+    .hide-scrollbar {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
