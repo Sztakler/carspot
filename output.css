@@ -583,16 +583,12 @@ video {
   display: inline-flex;
 }
 
-.h-\[1\.5px\] {
-  height: 1.5px;
+.h-\[1px\] {
+  height: 1px;
 }
 
 .h-auto {
   height: auto;
-}
-
-.h-\[1px\] {
-  height: 1px;
 }
 
 .w-\[600px\] {
@@ -722,12 +718,12 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.pt-52 {
-  padding-top: 13rem;
-}
-
 .pr-0 {
   padding-right: 0px;
+}
+
+.pt-52 {
+  padding-top: 13rem;
 }
 
 .text-left {

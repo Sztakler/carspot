@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+require("dotenv").config();
+
 export default {
     content: ["./*.{html,js}"],
     theme: {
@@ -9,7 +12,11 @@ export default {
         },
         extend: {
             backgroundImage: {
-                hero: "url('/assets/images/hero_background.png')",
+                hero: `url('${
+                    process.env.NODE_ENV === "production"
+                        ? "/carspot/assets/images/hero_background.png"
+                        : "/assets/images/hero_background.png"
+                }')`,
             },
         },
     },
