@@ -11,6 +11,9 @@ export default {
             backgroundImage: {
                 hero: "url('/assets/images/hero_background.png')",
             },
+            colors: {
+                black: "#282828",
+            },
         },
     },
     plugins: [],

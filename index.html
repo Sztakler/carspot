@@ -120,38 +120,70 @@
                 id="faq"
                 class="bg-black text-white flex flex-row gap-16 p-32"
             >
-                <div class="flex flex-col justify-start gap-4">
+                <div
+                    class="flex flex-col justify-start gap-4"
+                    data-container="expand"
+                >
                     <h2 class="font-bebasNeue text-2xl">
                         Id nostrud enim esse consectetur in eu mollit fugiat
                         aute. Velit nulla commodo.
                     </h2>
-                    <p class="font-robotoCondensed text-sm">
+                    <p
+                        data-text="expand"
+                        class="font-robotoCondensed text-sm transition-all duration-300 ease-in-out text-ellipsis overflow-hidden overflow- line-clamp-2 max-h-10"
+                    >
                         Mauris varius ipsum mauris, rutrum lobortis magna
                         efficitur a. Donec egestas, nisl vehicula feugiat
                         ornare, diam turpis efficitur mi, ac venenatis eros
-                        ipsum ac arcu. Vestibulum et [...]
+                        ipsum ac arcu. Vestibulum et molestie velit. Fusce non
+                        pellentesque velit. Curabitur euismod vulputate tortor
+                        ac interdum. Integer rutrum risus eget semper ornare.
+                        Sed volutpat elit nisi, ut dapibus libero ornare eget.
+                        Quisque pulvinar malesuada neque. Aliquam finibus dolor
+                        sed pellentesque venenatis.
                     </p>
                     <button
+                        data-button="expand"
                         class="font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max"
                     >
-                        Rozwiń <img src="assets/icons/arrow-down.svg" />
+                        <p>Rozwiń</p>
+                        <img
+                            src="assets/icons/arrow-down.svg"
+                            class="transition-all duration-300 ease-in-out"
+                        />
                     </button>
                 </div>
-                <div class="flex flex-col justify-start gap-4">
+                <div
+                    class="flex flex-col justify-start gap-4"
+                    data-container="expand"
+                >
                     <h2 class="font-bebasNeue text-2xl">
                         Id nostrud enim esse consectetur in eu mollit fugiat
                         aute. Velit nulla commodo.
                     </h2>
-                    <p class="font-robotoCondensed text-sm">
+                    <p
+                        data-text="expand"
+                        class="font-robotoCondensed text-sm transition-all duration-300 ease-in-out text-ellipsis overflow-hidden line-clamp-2 max-h-10"
+                    >
                         Mauris varius ipsum mauris, rutrum lobortis magna
                         efficitur a. Donec egestas, nisl vehicula feugiat
                         ornare, diam turpis efficitur mi, ac venenatis eros
-                        ipsum ac arcu. Vestibulum et [...]
+                        ipsum ac arcu. Vestibulum et molestie velit. Fusce non
+                        pellentesque velit. Curabitur euismod vulputate tortor
+                        ac interdum. Integer rutrum risus eget semper ornare.
+                        Sed volutpat elit nisi, ut dapibus libero ornare eget.
+                        Quisque pulvinar malesuada neque. Aliquam finibus dolor
+                        sed pellentesque venenatis.
                     </p>
                     <button
+                        data-button="expand"
                         class="font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max"
                     >
-                        Rozwiń <img src="assets/icons/arrow-down.svg" />
+                        <p>Rozwiń</p>
+                        <img
+                            src="assets/icons/arrow-down.svg"
+                            class="transition-all duration-300 ease-in-out"
+                        />
                     </button>
                 </div>
             </section>
@@ -161,12 +193,12 @@
         >
             <div class="absolute inset-x-0 top-0 h-[1px] bg-white"></div>
 
-            <div class="font-robotoCondensed font-bold text-base">
+            <button class="font-robotoCondensed font-bold text-base">
                 <a href="#hero">Car Sport</a>
-            </div>
-            <div class="font-robotoCondensed text-base underline">
-                Polityka prywatności
-            </div>
+            </button>
+            <button class="font-robotoCondensed text-base underline">
+                <a href="#hero">Polityka prywatności</a>
+            </button>
         </footer>
         <script type="module" src="scripts/main.js"></script>
     </body>

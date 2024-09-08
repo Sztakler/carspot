@@ -57,7 +57,6 @@ export function initCarousel() {
     function moveCarousel() {
         currentIndex = (currentIndex + 1) % images.length;
         scrollToImage(currentIndex);
-        console.log("move", currentIndex);
     }
 
     const intervalTime = 3000;
