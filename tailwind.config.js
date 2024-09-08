@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./*.{html,js}"],
+    content: ["./*.{html,js}", "./scripts/**/*.{js,ts}"],
     theme: {
         fontFamily: {
             robotoCondensed: ["Roboto Condensed", "sans-serif"],
@@ -9,7 +9,7 @@ export default {
         },
         extend: {
             backgroundImage: {
-                hero: "url('/carspot/assets/images/hero_background.png')",
+                hero: "url('/assets/images/hero_background.png')",
             },
         },
     },

@@ -11,11 +11,11 @@ h1 {
 }
 
 .button-background {
-    @apply bg-blue-600 text-white hover:bg-blue-700;
+    @apply bg-blue-600 text-white hover:bg-blue-800;
 }
 
 .button-outline {
-    @apply border border-blue-600 text-blue-600 hover:bg-gray-100;
+    @apply border border-blue-600 text-blue-600 bg-white hover:bg-gray-300 hover:text-blue-700;
 }
 
 .button-active {
@@ -28,6 +28,10 @@ h1 {
 
 .dot-active {
     @apply bg-blue-600;
+}
+
+.bg-blurred {
+    @apply bg-[rgba(255,255,255,0.5)] backdrop-blur-md;
 }
 
 @layer utilities {
