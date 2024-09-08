@@ -11,14 +11,25 @@ export function initCarousel() {
         });
     };
 
-    const scrollToImage = (index) => {
-        images[index].scrollIntoView({
+    function scrollIntoViewHorizontally(container, child) {
+        const itemRect = child.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const scrollLeft =
+            itemRect.left -
+            containerRect.left +
+            container.scrollLeft -
+            (containerRect.width - itemRect.width) / 2;
+
+        container.scrollTo({
+            left: scrollLeft,
             behavior: "smooth",
-            block: "nearest",
-            inline: "center",
         });
+    }
+
+    function scrollToImage(index) {
+        scrollIntoViewHorizontally(carousel, images[index]);
         updateActiveDot(index);
-    };
+    }
 
     carousel.addEventListener("wheel", (event) => {
         event.preventDefault();
@@ -49,22 +60,22 @@ export function initCarousel() {
         console.log("move", currentIndex);
     }
 
-    const intervalTime = 1500;
+    const intervalTime = 3000;
     let interval = setInterval(moveCarousel, intervalTime);
 
-    carouselContainer.addEventListener("mouseenter", () => {
+    carousel.addEventListener("mouseenter", () => {
         clearInterval(interval);
     });
 
-    carouselContainer.addEventListener("mouseleave", () => {
+    carousel.addEventListener("mouseleave", () => {
         interval = setInterval(moveCarousel, intervalTime);
     });
 
-    carouselContainer.addEventListener("touchstart", () => {
+    carousel.addEventListener("touchstart", () => {
         clearInterval(interval);
     });
 
-    carouselContainer.addEventListener("touchend", () => {
+    carousel.addEventListener("touchend", () => {
         interval = setInterval(moveCarousel, intervalTime);
     });
 }
