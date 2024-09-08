@@ -73,9 +73,13 @@
                         </h2>
                     </div>
 
-                    <div class="flex flex-row gap-16">
-                        <button class="button-active">Samochody osobowe</button>
-                        <button>Samochody dostawcze</button>
+                    <div id="gallery-buttons" class="flex flex-row gap-16">
+                        <button class="hover:opacity-80">
+                            Samochody osobowe
+                        </button>
+                        <button class="hover:opacity-80">
+                            Samochody dostawcze
+                        </button>
                     </div>
                 </header>
                 <div
@@ -142,10 +146,7 @@
                         Quisque pulvinar malesuada neque. Aliquam finibus dolor
                         sed pellentesque venenatis.
                     </p>
-                    <button
-                        data-button="expand"
-                        class="font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max"
-                    >
+                    <button data-button="expand" class="button-arrow">
                         <p>Rozwiń</p>
                         <img
                             src="assets/icons/arrow-down.svg"
@@ -175,10 +176,7 @@
                         Quisque pulvinar malesuada neque. Aliquam finibus dolor
                         sed pellentesque venenatis.
                     </p>
-                    <button
-                        data-button="expand"
-                        class="font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max"
-                    >
+                    <button data-button="expand" class="button-arrow">
                         <p>Rozwiń</p>
                         <img
                             src="assets/icons/arrow-down.svg"
@@ -193,10 +191,14 @@
         >
             <div class="absolute inset-x-0 top-0 h-[1px] bg-white"></div>
 
-            <button class="font-robotoCondensed font-bold text-base">
+            <button
+                class="font-robotoCondensed font-bold text-base transition-opacity duration-300 ease-in-out hover:opacity-80"
+            >
                 <a href="#hero">Car Sport</a>
             </button>
-            <button class="font-robotoCondensed text-base underline">
+            <button
+                class="font-robotoCondensed text-base underline transition-opacity duration-300 ease-in-out hover:opacity-80"
+            >
                 <a href="#hero">Polityka prywatności</a>
             </button>
         </footer>

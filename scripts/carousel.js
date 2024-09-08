@@ -1,6 +1,29 @@
 export function initCarousel() {
+    /* Gallery menu buttons */
+    let selectedButton = 0;
+    const galleryButtons = document
+        .getElementById("gallery-buttons")
+        .querySelectorAll("button");
+
+    function updateActiveButton(index) {
+        galleryButtons.forEach((button, i) => {
+            if (index === i) button.classList.add("button-active");
+            else button.classList.remove("button-active");
+        });
+    }
+
+    galleryButtons.forEach((button, index) => {
+        console.log(button);
+        button.addEventListener("click", (event) => {
+            selectedButton = index;
+            updateActiveButton(selectedButton);
+        });
+    });
+
+    updateActiveButton(selectedButton); // Initial state
+
+    /* Gallery carousel */
     const carousel = document.getElementById("carousel");
-    const carouselContainer = document.getElementById("carousel-container");
     const images = carousel.querySelectorAll("img");
     const dotsContainer = document.getElementById("dots-container");
     let currentIndex = 0;

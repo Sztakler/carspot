@@ -13,6 +13,8 @@ export default {
             },
             colors: {
                 black: "#282828",
+                "blue-600": "#0147FF",
+                "blue-800": "#003ddd",
             },
         },
     },
