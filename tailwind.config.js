@@ -9,7 +9,7 @@ export default {
         },
         extend: {
             backgroundImage: {
-                hero: "url('/assets/images/hero_background.png')",
+                hero: "url('/carspot/assets/images/hero_background.png')",
             },
             colors: {
                 black: "#282828",
