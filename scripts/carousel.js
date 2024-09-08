@@ -1,30 +1,28 @@
 export function initCarousel() {
-    const carousel = document.getElementById("images-container");
+    const carousel = document.getElementById("carousel");
+    const carouselContainer = document.getElementById("carousel-container");
     const images = carousel.querySelectorAll("img");
     const dotsContainer = document.getElementById("dots-container");
+    let currentIndex = 0;
 
     const updateActiveDot = (index) => {
-        console.log(index);
         dotsContainer.querySelectorAll(".dot").forEach((dot, i) => {
             dot.classList.toggle("dot-active", i === index);
         });
     };
 
     const scrollToImage = (index) => {
-        const imageWidth = images[0].offsetWidth;
-
-        carousel.scrollTo({
-            left: imageWidth * index,
+        images[index].scrollIntoView({
             behavior: "smooth",
+            block: "nearest",
+            inline: "center",
         });
         updateActiveDot(index);
     };
-    let isScrolling = false;
-    let scrollAmount = 0;
 
     carousel.addEventListener("wheel", (event) => {
         event.preventDefault();
-        carousel.scrollLeft += event.deltaY * 1.5;
+        carousel.scrollLeft += event.deltaY * 5;
     });
 
     window.addEventListener("DOMContentLoaded", (event) => {
@@ -36,7 +34,6 @@ export function initCarousel() {
         });
     });
 
-    let currentIndex = 0;
     dotsContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("dot")) {
             const index = parseInt(event.target.dataset.index);
@@ -52,21 +49,22 @@ export function initCarousel() {
         console.log("move", currentIndex);
     }
 
-    let interval = setInterval(moveCarousel, 3000);
+    const intervalTime = 1500;
+    let interval = setInterval(moveCarousel, intervalTime);
 
-    carousel.addEventListener("mouseenter", () => {
+    carouselContainer.addEventListener("mouseenter", () => {
         clearInterval(interval);
     });
 
-    carousel.addEventListener("mouseleave", () => {
-        interval = setInterval(moveCarousel, 3000);
+    carouselContainer.addEventListener("mouseleave", () => {
+        interval = setInterval(moveCarousel, intervalTime);
     });
 
-    carousel.addEventListener("touchstart", () => {
+    carouselContainer.addEventListener("touchstart", () => {
         clearInterval(interval);
     });
 
-    carousel.addEventListener("touchend", () => {
-        interval = setInterval(moveCarousel, 3000);
+    carouselContainer.addEventListener("touchend", () => {
+        interval = setInterval(moveCarousel, intervalTime);
     });
 }
