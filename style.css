@@ -3,11 +3,27 @@
 @tailwind utilities;
 
 h1 {
-    @apply text-7xl font-bebasNeue text-black tracking-tighter leading-[89.4px];
+    @apply text-[76px] font-bebasNeue text-black tracking-[-0.04em] leading-[84px];
+}
+
+h2 {
+    @apply text-[40px] font-bebasNeue text-black leading-[48px];
+}
+
+h3 {
+    @apply text-[25px] font-bebasNeue tracking-[-0.03em] leading-[38px];
+}
+
+h4 {
+    @apply font-robotoCondensed text-[22px] leading-[32px];
 }
 
 .button {
-    @apply px-6 py-3 font-robotoFlex font-semibold text-base rounded-lg transition-colors duration-300 ease-in-out;
+    @apply px-6 py-3 rounded-lg transition-colors duration-300 ease-in-out;
+}
+
+.button-text {
+    @apply font-robotoFlex font-semibold text-[15px] tracking-[-0.02em] leading-[23px];
 }
 
 .button-background {

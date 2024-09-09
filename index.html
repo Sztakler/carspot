@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/assets/images/icon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/assets/icons/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,9 @@
                     >FaQ</a
                 >
             </div>
-            <button class="button button-background">Zadzwoń do nas</button>
+            <button class="button button-text button-background">
+                Zadzwoń do nas
+            </button>
         </nav>
         <main class="">
             <section
@@ -53,10 +55,10 @@
                     </p>
                 </header>
                 <div class="flex flex-row gap-6">
-                    <button class="button button-background">
+                    <button class="button button-text button-background">
                         Zobacz zdjęcia
                     </button>
-                    <button class="button button-outline">
+                    <button class="button button-text button-outline">
                         Zadzwoń do nas
                     </button>
                 </div>
@@ -65,19 +67,15 @@
             <section id="gallery" class="p-32 pr-0 flex flex-col gap-12">
                 <header class="flex flex-col gap-6">
                     <div>
-                        <h4 class="text-blue-600 font-robotoCondensed text-sm">
-                            Prezentacja firmy
-                        </h4>
-                        <h2 class="text-black font-bebasNeue text-4xl">
-                            Zobacz naszą galerię zdjeć
-                        </h2>
+                        <h4 class="text-blue-600">Prezentacja firmy</h4>
+                        <h2>Zobacz naszą galerię zdjeć</h2>
                     </div>
 
                     <div id="gallery-buttons" class="flex flex-row gap-16">
-                        <button class="hover:opacity-80">
+                        <button class="button-text hover:opacity-80">
                             Samochody osobowe
                         </button>
-                        <button class="hover:opacity-80">
+                        <button class="button-text hover:opacity-80">
                             Samochody dostawcze
                         </button>
                     </div>
@@ -91,17 +89,17 @@
                         class="flex flex-row gap-16 overflow-x-scroll hide-scrollbar scroll-smooth"
                     >
                         <img
-                            class="w-[600px] h-[480px] object-cover"
+                            class="w-[600px] h-[480px] shrink-0 object-cover"
                             src="assets/images/redcar.png"
                             alt="Red car"
                         />
                         <img
-                            class="w-[600px] h-[480px] object-cover"
+                            class="w-[600px] h-[480px] shrink-0 object-cover"
                             src="assets/images/blackcar.png"
                             alt="Black car"
                         />
                         <img
-                            class="w-[600px] h-[480px] object-cover"
+                            class="w-[600px] h-[480px] shrink-0 object-cover"
                             src="assets/images/blackcargrill.png"
                             alt="Black car's grill"
                         />
@@ -131,13 +129,13 @@
                     class="flex flex-col justify-start gap-4"
                     data-container="expand"
                 >
-                    <h2 class="font-bebasNeue text-2xl">
+                    <h3>
                         Id nostrud enim esse consectetur in eu mollit fugiat
                         aute. Velit nulla commodo.
-                    </h2>
+                    </h3>
                     <p
                         data-text="expand"
-                        class="font-robotoCondensed text-sm transition-all duration-300 ease-in-out text-ellipsis overflow-hidden overflow- line-clamp-2 max-h-10"
+                        class="font-robotoCondensed text-[14px] leading-[21px] transition-all duration-300 ease-in-out text-ellipsis overflow-hidden overflow- line-clamp-2 max-h-10"
                     >
                         Mauris varius ipsum mauris, rutrum lobortis magna
                         efficitur a. Donec egestas, nisl vehicula feugiat
@@ -150,7 +148,7 @@
                         sed pellentesque venenatis.
                     </p>
                     <button data-button="expand" class="button-arrow">
-                        <p>Rozwiń</p>
+                        <p class="">Rozwiń</p>
                         <img
                             src="assets/icons/arrow-down.svg"
                             class="transition-all duration-300 ease-in-out"
@@ -161,13 +159,13 @@
                     class="flex flex-col justify-start gap-4"
                     data-container="expand"
                 >
-                    <h2 class="font-bebasNeue text-2xl">
+                    <h3>
                         Id nostrud enim esse consectetur in eu mollit fugiat
                         aute. Velit nulla commodo.
-                    </h2>
+                    </h3>
                     <p
                         data-text="expand"
-                        class="font-robotoCondensed text-sm transition-all duration-300 ease-in-out text-ellipsis overflow-hidden line-clamp-2 max-h-10"
+                        class="font-robotoCondensed text-[14px] leading-[21px] transition-all duration-300 ease-in-out text-ellipsis overflow-hidden line-clamp-2 max-h-10"
                     >
                         Mauris varius ipsum mauris, rutrum lobortis magna
                         efficitur a. Donec egestas, nisl vehicula feugiat
@@ -180,7 +178,7 @@
                         sed pellentesque venenatis.
                     </p>
                     <button data-button="expand" class="button-arrow">
-                        <p>Rozwiń</p>
+                        <p class="text-[14px] leading-[21px]">Rozwiń</p>
                         <img
                             src="assets/icons/arrow-down.svg"
                             class="transition-all duration-300 ease-in-out"
