@@ -1,9 +1,9 @@
 import { initNavbar } from "./navbar";
-import { initCarousel } from "./carousel";
+import { initGallery } from "./gallery";
 import { initExpand } from "./expand";
 
 document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
-    initCarousel();
+    initGallery();
     initExpand();
 });
