@@ -34,12 +34,26 @@ export function initGallery() {
         track.insertBefore(lastClone, items[0]);
     }
 
-    const itemWidth = items[0].getBoundingClientRect().width;
+    let itemWidth = items[0].getBoundingClientRect().width;
     const gap = 64;
     const offset = items.length;
-    const containerWidth = track.getBoundingClientRect().width;
+    let containerWidth = track.getBoundingClientRect().width;
     let currentScroll =
         offset * (itemWidth + gap) - (containerWidth - itemWidth) / 2;
+
+    function updateCenterPosition() {
+        itemWidth = items[0].getBoundingClientRect().width;
+        containerWidth = track.getBoundingClientRect().width;
+        console.log(containerWidth, itemWidth);
+        resetCarousel(
+            (offset + currentIndex) * (itemWidth + gap) -
+                (containerWidth - itemWidth) / 2,
+            currentIndex,
+        );
+    }
+
+    window.addEventListener("resize", updateCenterPosition);
+
     track.scrollTo({
         left: currentScroll,
         behavior: "smooth",
@@ -48,6 +62,7 @@ export function initGallery() {
     function moveToSlide(index) {
         const diff = index - currentIndex;
         currentIndex = index;
+        console.log("aaaaaa");
 
         currentScroll += (itemWidth + gap) * diff;
         track.scrollTo({
@@ -110,10 +125,10 @@ export function initGallery() {
     }
 
     updateActiveDot(currentIndex);
-
+    let intervalTime = 2000;
     let autoScrollInterval = setInterval(() => {
         moveToSlide(currentIndex + 1);
-    }, 3000);
+    }, intervalTime);
 
     const carousel = document.getElementById("carousel-container");
     carousel.addEventListener("mouseover", () => {
@@ -122,6 +137,38 @@ export function initGallery() {
     carousel.addEventListener("mouseout", () => {
         autoScrollInterval = setInterval(() => {
             moveToSlide(currentIndex + 1);
-        }, 3000);
+        }, intervalTime);
+    });
+
+    track.addEventListener("touchstart", () => {
+        clearInterval(autoScrollInterval);
+    });
+    track.addEventListener("touchend", () => {
+        autoScrollInterval = setInterval(() => {
+            moveToSlide(currentIndex + 1);
+        }, intervalTime);
+    });
+
+    /* Overwrite default scroll and swipe */
+    track.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        if (event.deltaY < 0) moveToSlide(currentIndex - 1);
+        else moveToSlide(currentIndex + 1);
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    track.addEventListener("touchstart", (event) => {
+        touchStartX = event.touches[0].clientX;
+    });
+    track.addEventListener("touchmove", (event) => {
+        event.preventDefault();
+        touchEndX = event.touches[0].clientX;
+    });
+    track.addEventListener("touchend", (event) => {
+        event.preventDefault();
+
+        if (touchStartX - touchEndX > 50) moveToSlide(currentIndex + 1);
+        else if (touchStartX - touchEndX < -50) moveToSlide(currentIndex - 1);
     });
 }
