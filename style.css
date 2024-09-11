@@ -40,11 +40,11 @@ h4 {
 }
 
 .button-active {
-    @apply text-blue-600 font-semibold underline;
+    @apply text-blue-600 font-semibold border-b border-blue-600;
 }
 
 .button-arrow {
-    @apply transition-opacity duration-300 ease-in-out font-robotoCondensed text-sm inline-flex gap-2 items-center font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max hover:opacity-80;
+    @apply transition-opacity duration-300 ease-in-out font-robotoCondensed text-sm inline-flex gap-2 items-center border-b-2 max-w-max hover:opacity-80;
 }
 
 .dot {
@@ -66,6 +66,7 @@ h4 {
 .offscreen-menu {
     @apply h-screen w-full max-w-[450px] fixed top-0 -right-[450px] flex flex-col justify-center items-center text-center font-robotoFlex font-semibold text-base transition-all duration-300 ease-in;
 }
+
 .offscreen-menu.active {
     @apply right-0;
 }
@@ -81,6 +82,7 @@ h4 {
 .hamburger-menu div:nth-child(1) {
     @apply top-1/4;
 }
+
 .hamburger-menu div:nth-child(3) {
     @apply top-3/4;
 }
@@ -88,20 +90,25 @@ h4 {
 .hamburger-menu.active div:nth-child(1) {
     @apply rotate-45 translate-y-[5px];
 }
+
 .hamburger-menu.active div:nth-child(2) {
     @apply transition-opacity opacity-0;
 }
+
 .hamburger-menu.active div:nth-child(3) {
     @apply -rotate-45 -translate-y-[7px];
 }
 
 @layer utilities {
     .hide-scrollbar {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
     }
 
     .hide-scrollbar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
+        /* Chrome, Safari, Opera */
     }
 }

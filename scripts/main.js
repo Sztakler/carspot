@@ -1,7 +1,7 @@
-import { initNavbar } from "./navbar";
-import { initGallery } from "./gallery";
-import { initExpand } from "./expand";
-import { initHamburger } from "./hamburger";
+import { initNavbar } from "./navbar.js";
+import { initGallery } from "./gallery.js";
+import { initExpand } from "./expand.js";
+import { initHamburger } from "./hamburger.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
