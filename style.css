@@ -18,11 +18,6 @@ h4 {
     @apply font-robotoCondensed text-[22px] leading-[32px];
 }
 
-#hero,
-#gallery {
-    @apply h-screen md:h-fit;
-}
-
 .button {
     @apply px-4 py-3 lg:px-6 lg:py-3 rounded-lg transition-colors duration-300 ease-in-out;
 }
@@ -64,7 +59,7 @@ h4 {
 }
 
 .offscreen-menu {
-    @apply h-screen w-full max-w-[450px] fixed top-0 -right-[450px] flex flex-col justify-center items-center text-center font-robotoFlex font-semibold text-base transition-all duration-300 ease-in;
+    @apply sm:hidden h-screen w-full max-w-[450px] fixed top-0 -right-[450px] flex flex-col justify-center items-center text-center font-robotoFlex font-semibold text-base transition-all duration-300 ease-in;
 }
 
 .offscreen-menu.active {

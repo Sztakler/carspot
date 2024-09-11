@@ -619,6 +619,10 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -639,6 +643,10 @@ video {
 
 .resize {
   resize: both;
+}
+
+.scroll-pt-24 {
+  scroll-padding-top: 6rem;
 }
 
 .flex-row {
@@ -817,6 +825,14 @@ video {
   padding-top: 8rem;
 }
 
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -929,19 +945,6 @@ h4 {
   font-family: Roboto Condensed, sans-serif;
   font-size: 22px;
   line-height: 32px;
-}
-
-#hero,
-#gallery {
-  height: 100vh;
-}
-
-@media (min-width: 768px) {
-  #hero,
-#gallery {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
 }
 
 .button {
@@ -1089,6 +1092,12 @@ h4 {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+@media (min-width: 640px) {
+  .offscreen-menu {
+    display: none;
+  }
+}
+
 .offscreen-menu.active {
   right: 0px;
 }
@@ -1160,6 +1169,11 @@ h4 {
 }
 
 @media (min-width: 768px) {
+  .md\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1203,8 +1217,8 @@ h4 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:h-\[480px\] {
-    height: 480px;
+  .lg\:h-\[446px\] {
+    height: 446px;
   }
 
   .lg\:gap-8 {
