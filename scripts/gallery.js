@@ -44,7 +44,6 @@ export function initGallery() {
     function updateCenterPosition() {
         itemWidth = items[0].getBoundingClientRect().width;
         containerWidth = track.getBoundingClientRect().width;
-        console.log(containerWidth, itemWidth);
         resetCarousel(
             (offset + currentIndex) * (itemWidth + gap) -
                 (containerWidth - itemWidth) / 2,
@@ -62,7 +61,6 @@ export function initGallery() {
     function moveToSlide(index) {
         const diff = index - currentIndex;
         currentIndex = index;
-        console.log("aaaaaa");
 
         currentScroll += (itemWidth + gap) * diff;
         track.scrollTo({
