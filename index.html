@@ -27,34 +27,36 @@
 
 <body>
   <div class="offscreen-menu bg-white">
-    <ul class="flex flex-col justify-start items-start  pt-16  w-full h-full uppercase">
-      <li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span><a href="#gallery">Samochody osobowe</a></span> <img
-          src="./assets/icons/chevron_right_24.svg" /></li>
-      <li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span><a href="#gallery">Samochody dostawcze</a></span> <img
-          src="./assets/icons/chevron_right_24.svg" /></li>
-      <li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span><a href="#gallery">Galeria zdjeć</a></span> <img
-          src="./assets/icons/chevron_right_24.svg" /></li>
-      <li class="flex w-full justify-between py-2 px-8 border-y border-gray-900"><span><a href="#seo">FaQ</a></span> <img
-          class="text-black" src="./assets/icons/chevron_right_24.svg" /></li>
-      <li class=" text-blue-600 flex w-full justify-between py-2 px-8 border-b border-gray-900"><span><a href="#hero">Zadzwoń do
-          nas</a></span></li>
+    <ul class="flex flex-col justify-start items-start pt-16 w-full h-full uppercase">
+      <a aria-label="Przejdź do galerii" class="w-full" href="#gallery"><li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span>Samochody osobowe</span> <img
+          src="./assets/icons/chevron_right_24.svg" alt="Przejdź dalej" /></li></a>
+      <a  aria-label="Przejdź do galerii" class="w-full" href="#gallery"><li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span>Samochody dostawcze</span> <img
+          src="./assets/icons/chevron_right_24.svg" alt="Przejdź dalej" /></li></a>
+      <a  aria-label="Przejdź do galerii" class="w-full" href="#gallery"><li class="flex w-full justify-between py-2 px-8 border-t border-gray-900"><span>Galeria zdjeć</span> <img
+          src="./assets/icons/chevron_right_24.svg" alt="Przejdź dalej" /></li></a>
+      <a  aria-label="Przejdź do artykułów" class="w-full" href="#seo"><li class="flex w-full justify-between py-2 px-8 border-y border-gray-900"><span>FaQ</span> <img
+          class="text-black" src="./assets/icons/chevron_right_24.svg" alt="Przejdź dalej" /></li></a>
+      <a  aria-label="Przejdź do początku strony" class="w-full" href="#hero"><li class=" text-blue-600 flex w-full justify-between py-2 px-8 border-b border-gray-900"><span>Zadzwoń do
+          nas</span></li></a>
     </ul>
   </div>
   <nav id="navbar"
     class="p-8 md:px-16 lg:px-32 flex flex-row w-full justify-between items-center py-4 fixed transition-all duration-300 ease-in-out">
-    <a href="#hero"><img src="assets/images/logo.svg" alt="Logo CarSpot" /></a>
+    <a aria-label="Przejdź do początku strony" href="#hero"><img src="assets/images/logo.svg" alt="Logo CarSpot" /></a>
 
     <div class="hidden sm:flex flex-row gap-6 items-center justify-center">
-      <a href="#gallery" class="font-robotoFlex text-base text-black hover:underline">Galeria zdjeć</a>
-      <a href="#faq" class="font-robotoFlex text-base text-black hover:underline">FaQ</a>
+      <a  aria-label="Przejdź do galerii" href="#gallery" class="font-robotoFlex text-base text-black hover:underline">Galeria zdjeć</a>
+      <a  aria-label="Przejdź do pytań i odpowiedzi" href="#faq" class="font-robotoFlex text-base text-black hover:underline">FaQ</a>
     </div>
-    <button class="hidden sm:flex button button-text button-background">
+    <button aria-label="Zadzwoń do nas" class="hidden sm:flex button button-text button-background">
       Zadzwoń do nas
     </button>
-    <button class="hamburger-menu">
-      <div></div>
-      <div></div>
-      <div></div>
+    <button aria-label="Menu" class="hamburger-button w-[50px] h-[50px] flex justify-center items-center">
+        <div class="hamburger-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </button>
   </nav>
   <main class="">
@@ -71,10 +73,10 @@
       </header>
       <div class="flex flex-col md:flex-row gap-6">
         <button class="button button-text button-background">
-          Zobacz zdjęcia
+          <a aria-label="Przejdź do galerii" href="#gallery">Zobacz zdjęcia</a>
         </button>
         <button class="button button-text button-outline">
-          Zadzwoń do nas
+          <a aria-label="Przejdź do początku strony" href="#hero">Zadzwoń do nas</a>
         </button>
       </div>
     </section>
@@ -87,10 +89,10 @@
         </div>
 
         <div id="gallery-buttons" class="flex flex-col gap-2 items-start md:flex-row md:gap-12">
-          <button class="button-text p-0 hover:opacity-80">
+          <button aria-label="Przeglądaj samochody osobowe" class="button-text p-0 hover:opacity-80">
             Samochody osobowe
           </button>
-          <button class="button-text p-0 hover:opacity-80">
+          <button aria-label="Przeglądaj samochody dostawcze" class="button-text p-0 hover:opacity-80">
             Samochody dostawcze
           </button>
         </div>
@@ -99,16 +101,16 @@
         <div class="w-full flex flex-col items-center gap-12 ">
           <div id="carousel"
             class="flex flex-row gap-16 h-[360px] lg:h-[446px] overflow-x-scroll hide-scrollbar scroll-smooth">
-            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/redcar.png" alt="Red car" />
-            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/blackcar.png" alt="Black car" />
+            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/redcar.png" alt="Czerwony samochód" />
+            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/blackcar.png" alt="Czarny samochód" />
             <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/blackcargrill.png"
-              alt="Black car's grill" />
+              alt="Przedni zderzak czarnego samochodu" />
             <!-- Added two more images from unsplash to better present the carousel -->
             <!-- https://unsplash.com/photos/black-mercedes-benz-coupe-on-road-during-daytime-E36kvVnjOBk
                            -->
-            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/porshe.jpg" alt="Porshe car" />
+            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/porshe.jpg" alt="Srebrne Porshe Cayman" />
             <!-- https://unsplash.com/photos/a-blue-sports-car-parked-in-a-parking-lot-x6t1n6Hnn98?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash -->
-            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/ford.jpg" alt="Ford car" />
+            <img class="aspect-[5/4] shrink-0 object-cover" src="assets/images/ford.jpg" alt="Niebieski Ford" />
           </div>
         </div>
         <div id="dots-container" class="flex flex-row gap-3"></div>
@@ -134,9 +136,9 @@
           Quisque pulvinar malesuada neque. Aliquam finibus dolor
           sed pellentesque venenatis.
         </p>
-        <button data-button="expand" class="button-arrow">
+        <button aria-label="Zwiń/Rozwiń opis" data-button="expand" class="button-arrow">
           <p class="">Rozwiń</p>
-          <img src="assets/icons/arrow-down.svg" class="transition-transform duration-500 ease-in-out" />
+          <img src="assets/icons/arrow-down.svg" alt="Rozwiń" class="transition-transform duration-500 ease-in-out" />
         </button>
       </div>
 
@@ -157,9 +159,9 @@
           Quisque pulvinar malesuada neque. Aliquam finibus dolor
           sed pellentesque venenatis.
         </p>
-        <button data-button="expand" class="button-arrow">
+        <button aria-label="Zwiń/Rozwiń opis" data-button="expand" class="button-arrow">
           <p class="text-[14px] leading-[21px]">Rozwiń</p>
-          <img src="assets/icons/arrow-down.svg" class="transition-transform duration-500 ease-in-out" />
+          <img src="assets/icons/arrow-down.svg" alt="Rozwiń" class="transition-transform duration-500 ease-in-out" />
         </button>
       </div>
     </section>
@@ -169,11 +171,11 @@
 
     <button
       class="font-robotoCondensed font-bold text-base transition-opacity duration-300 ease-in-out hover:opacity-80">
-      <a href="#hero">Car Sport</a>
+      <a aria-label="Przejdź do początku strony" href="#hero">Car Sport</a>
     </button>
     <button
       class="font-robotoCondensed text-base underline transition-opacity duration-300 ease-in-out hover:opacity-80">
-      <a href="#hero">Polityka prywatności</a>
+      <a aria-label="Przejdź do początku strony" href="#hero">Polityka prywatności</a>
     </button>
   </footer>
   <script type="module" src="./scripts/main.js"></script>

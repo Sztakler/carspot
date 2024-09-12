@@ -43,7 +43,7 @@ h4 {
 }
 
 .dot {
-    @apply w-2 h-2 rounded-full bg-gray-200 transition-colors duration-300 ease-in-out;
+    @apply w-4 h-4 md:w-2 md:h-2 rounded-full bg-gray-200 transition-colors duration-300 ease-in-out;
 }
 
 .dot-active {
@@ -66,31 +66,31 @@ h4 {
     @apply right-0;
 }
 
-.hamburger-menu {
+.hamburger-icon {
     @apply h-[24px] w-[24px] relative sm:hidden;
 }
 
-.hamburger-menu div {
+.hamburger-icon div {
     @apply h-[2px] w-full bg-black rounded-3xl absolute top-1/2 transition-transform duration-300 ease-in-out;
 }
 
-.hamburger-menu div:nth-child(1) {
+.hamburger-icon div:nth-child(1) {
     @apply top-1/4;
 }
 
-.hamburger-menu div:nth-child(3) {
+.hamburger-icon div:nth-child(3) {
     @apply top-3/4;
 }
 
-.hamburger-menu.active div:nth-child(1) {
+.hamburger-icon.active div:nth-child(1) {
     @apply rotate-45 translate-y-[5px];
 }
 
-.hamburger-menu.active div:nth-child(2) {
+.hamburger-icon.active div:nth-child(2) {
     @apply transition-opacity opacity-0;
 }
 
-.hamburger-menu.active div:nth-child(3) {
+.hamburger-icon.active div:nth-child(3) {
     @apply -rotate-45 -translate-y-[7px];
 }
 

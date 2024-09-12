@@ -160,11 +160,11 @@ export function initGallery() {
         touchStartX = event.touches[0].clientX;
     });
     track.addEventListener("touchmove", (event) => {
+        event.preventDefault();
         touchEndX = event.touches[0].clientX;
     });
     track.addEventListener("touchend", (event) => {
-        event.preventDefault();
-
+        console.log(touchStartX, touchEndX);
         if (touchStartX - touchEndX > 50) moveToSlide(currentIndex + 1);
         else if (touchStartX - touchEndX < -50) moveToSlide(currentIndex - 1);
     });

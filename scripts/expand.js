@@ -6,6 +6,7 @@ export function initExpand() {
     expandableContainers.forEach((container, index) => {
         const button = container.querySelector("button");
         const text = container.querySelector("[data-text='expand']");
+        const img = button.querySelector("img");
         let maxWidth = text.offsetWidth * 2;
         let originalText = truncateText(text, maxWidth);
         let isTruncated = true;
@@ -19,16 +20,25 @@ export function initExpand() {
             buttonText.textContent = text.classList.contains("expanded")
                 ? "Zwiń"
                 : "Rozwiń";
+            img.alt = text.classList.contains("expanded") ? "Zwiń" : "Rozwiń";
             buttonIcon.classList.toggle("rotate-180");
         });
 
         function toggleText() {
             console.log(isTruncated, text);
+            const screenWidth =
+                window.innerWidth || document.documentElement.clientWidth;
             if (isTruncated) {
                 text.innerText = originalText;
             } else {
-                truncateText(text, maxWidth);
+                setTimeout(() => {
+                    truncateText(
+                        text,
+                        screenWidth < 1240 ? maxWidth / 2 : maxWidth,
+                    );
+                }, 500);
             }
+            console.log(screenWidth);
             text.classList.toggle("expanded");
             isTruncated = !isTruncated;
         }
