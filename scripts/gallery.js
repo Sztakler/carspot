@@ -160,7 +160,6 @@ export function initGallery() {
         touchStartX = event.touches[0].clientX;
     });
     track.addEventListener("touchmove", (event) => {
-        // event.preventDefault();
         touchEndX = event.touches[0].clientX;
     });
     track.addEventListener("touchend", (event) => {

@@ -59,7 +59,7 @@ h4 {
 }
 
 .offscreen-menu {
-    @apply sm:hidden h-screen w-full max-w-[450px] fixed top-0 -right-[450px] flex flex-col justify-center items-center text-center font-robotoFlex font-semibold text-base transition-all duration-300 ease-in;
+    @apply sm:hidden h-screen w-full max-w-[650px] fixed top-0 -right-[650px] flex flex-col justify-center items-center text-center font-robotoFlex font-semibold text-base transition-all duration-300 ease-in;
 }
 
 .offscreen-menu.active {
