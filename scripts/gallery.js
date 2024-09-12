@@ -103,6 +103,7 @@ export function initGallery() {
     items.forEach((item, index) => {
         const dot = document.createElement("button");
         dot.classList.add("dot");
+        dot.ariaLabel = `Przejdź do zdjęcia numer ${index + 1}`;
         dot.addEventListener("click", (event) => {
             moveToSlide(index);
             updateActiveDot(index);
