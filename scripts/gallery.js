@@ -157,15 +157,30 @@ export function initGallery() {
 
     let touchStartX = 0;
     let touchEndX = 0;
+
+    let isTouching = false;
+    let startY = 0;
+    let currentY = 0;
+    let deltaY = 0;
+
     track.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+        isTouching = true;
     });
     track.addEventListener("touchmove", (event) => {
         event.preventDefault();
         touchEndX = event.touches[0].clientX;
+
+        if (!isTouching) return;
+        currentY = event.touches[0].clientY;
+        deltaY = startY - currentY;
+        window.scrollBy(0, deltaY);
+        startY = currentY;
     });
     track.addEventListener("touchend", (event) => {
         console.log(touchStartX, touchEndX);
+        isTouching = false;
         if (touchStartX - touchEndX > 50) moveToSlide(currentIndex + 1);
         else if (touchStartX - touchEndX < -50) moveToSlide(currentIndex - 1);
     });
