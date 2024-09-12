@@ -9,13 +9,17 @@ export function initExpand() {
         const img = button.querySelector("img");
         let maxWidth = text.offsetWidth * 2;
         let originalText = truncateText(text, maxWidth);
-        let isTruncated = true;
+
+        /* Truncate text initially */
+        text.classList.toggle("expanded");
+        let isTruncated = false;
+        toggleText();
 
         button.addEventListener("click", (event) => {
             const buttonText = button.querySelector("p");
             const buttonIcon = button.querySelector("img");
 
-            toggleText(isTruncated, text, originalText);
+            toggleText();
 
             buttonText.textContent = text.classList.contains("expanded")
                 ? "Zwiń"
@@ -38,7 +42,6 @@ export function initExpand() {
                     );
                 }, 500);
             }
-            console.log(screenWidth);
             text.classList.toggle("expanded");
             isTruncated = !isTruncated;
         }
