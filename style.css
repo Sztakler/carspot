@@ -55,7 +55,7 @@ h4 {
 }
 
 .expanded {
-    @apply line-clamp-none max-h-96;
+    @apply max-h-[500px];
 }
 
 .offscreen-menu {
